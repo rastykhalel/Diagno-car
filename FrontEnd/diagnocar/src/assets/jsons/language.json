@@ -1,0 +1,30 @@
+{
+    "en": {
+      "home": "Home",
+      "about": "About",
+      "posts": "Posts",
+      "news": "News",
+      "NameOfAplication": "Diagno Car",
+      "Search..." : "Search..."
+    },
+    "es": {
+        "home": "Inicio",
+        "about": "Acerca de",
+        "posts": "Publicaciones",
+        "news": "Noticias",
+        "NameOfAplication": "Diagno Car",
+        "Search..." : ""
+        
+    },
+    "ku": {
+        "home": "سەرەتا",
+        "about": "دەربارەی ئێمە",
+        "posts": "پۆستەکان",
+        "news": "هەواڵەکان",
+        "NameOfAplication": "دایاگنۆ کار",
+        "Search..." : "گەڕان"
+     
+    }
+   
+  }
+  

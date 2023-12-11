@@ -1,0 +1,16 @@
+
+@font-face {
+    font-family: NRT;
+    src: url(../fonts/NRT.ttf);
+}
+
+
+@font-face {
+    font-family: rasty;
+    src: url(../fonts/rasty.ttf);
+}
+
+
+*{
+    font-family: rasty !important;
+}
