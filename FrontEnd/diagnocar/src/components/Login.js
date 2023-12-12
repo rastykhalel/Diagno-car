@@ -1,56 +1,37 @@
 import React, { useState } from 'react';
 import { Container, TextField, Button, Typography, Box } from '@mui/material';
-import { useNavigate,Link } from 'react-router-dom';
-import Cookies from 'js-cookie';
-import axios from 'axios';
+import { useNavigate, Link } from 'react-router-dom';
+
 import '../assets/css/home.css'; // Import your custom CSS file for styling
 import Validation from '../assets/js/Loginvalidation';
 
 function Login() {
-  const [values, setValues] = useState({
-    username: '',
-    password: '',
-  });
-
-  const [errors, setErrors] = useState({});
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
   const navigate = useNavigate();
-
-  const handleInputChange = (event) => {
-    setValues({ ...values, [event.target.name]: event.target.value });
-  };
-
+  const [errors, setErrors] = useState({});
+  
   const handleSubmit = async (event) => {
     event.preventDefault();
-    setErrors(Validation(values));
-    if (!errors.password && !errors.email) {
-    navigate('/');
-
-    // try {
-    //   if (Object.keys(errors).length === 0) {
-    //     const response = await axios.post(
-    //       'http://13.51.6.35:8000/account/api/token/',
-    //       {
-    //         username: values.username,
-    //         password: values.password,
-    //       }
-    //     );
-
-    //     const accessToken = response.data.access_token;
-
-    //     if (accessToken) {
-    //       Cookies.set('accessToken', accessToken);
-    //       navigate('/home');
-    //     } else {
-    //       alert('Token not received');
-    //     }
-    //   } else {
-    //     alert('Please fix the form errors before submitting');
-    //   }
-    // } catch (error) {
-    //   console.error('Error:', error);
-    //   alert('An error occurred during login');
-    // }
-    }
+    const data = JSON.stringify({
+      username: username,
+      password: password
+    });
+    
+    setErrors(Validation({ username, password }));
+    const xhr = new XMLHttpRequest();
+    xhr.withCredentials = true;
+    
+    xhr.addEventListener("readystatechange", function () {
+      if (this.readyState === this.DONE) {
+        console.log(this.responseText);
+      }
+    });
+    
+    xhr.open("POST", "http://51.20.138.46/account/api/token/");
+    xhr.setRequestHeader("Content-Type", "application/json");
+ 
+    xhr.send(data);
   };
 
   return (
@@ -76,8 +57,8 @@ function Login() {
             name="username" // Use the correct name attribute
             autoComplete="username"
             autoFocus
-            value={values.username}
-            onChange={handleInputChange}
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
             error={!!errors.username}
             helperText={errors.username ? errors.username : ''}
           />
@@ -90,8 +71,8 @@ function Login() {
             type="password"
             id="password"
             autoComplete="current-password"
-            value={values.password}
-            onChange={handleInputChange}
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
             error={!!errors.password}
             helperText={errors.password ? errors.password : ''}
           />
@@ -104,10 +85,10 @@ function Login() {
             Log In
           </Button>
           <Link to="/Signup" style={{ textDecoration: 'none' }}>
-          <Typography variant="body2" color="primary" style={{ marginTop: '20px', cursor: 'pointer' }}>
-            Create an account?
-          </Typography>
-        </Link>
+            <Typography variant="body2" color="primary" style={{ marginTop: '20px', cursor: 'pointer' }}>
+              Create an account?
+            </Typography>
+          </Link>
         </Box>
       </Box>
     </Container>

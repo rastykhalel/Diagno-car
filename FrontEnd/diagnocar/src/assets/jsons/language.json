@@ -24,7 +24,16 @@
         "NameOfAplication": "دایاگنۆ کار",
         "Search..." : "گەڕان"
      
-    }
+    },
+    "ar": {
+      "home": "الرئیسیە",
+      "about": "عنا",
+      "posts": "نشرنا",
+      "news": "احداث",
+      "NameOfAplication": "دایاکنو کار",
+      "Search..." : "بحث"
+   
+  }
    
   }
   

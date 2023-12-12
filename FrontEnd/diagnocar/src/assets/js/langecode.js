@@ -29,6 +29,7 @@ function setLanguageCookie(lang) {
 }
 var languageOptions = [
     { code: 'ku', label: 'زمانی کوردی' },
+    { code: 'ar', label: ' العربیە' },
     { code: 'en', label: 'English' },
     { code: 'es', label: 'Spanish' },
     // Add more language options as needed
