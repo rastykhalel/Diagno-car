@@ -3,15 +3,11 @@ import Box from '@mui/material/Box';
 import SpeedDial from '@mui/material/SpeedDial';
 import SpeedDialIcon from '@mui/material/SpeedDialIcon';
 import SpeedDialAction from '@mui/material/SpeedDialAction';
-import FileCopyIcon from '@mui/icons-material/FileCopyOutlined';
-import SaveIcon from '@mui/icons-material/Save';
 import PrintIcon from '@mui/icons-material/Print';
 import ShareIcon from '@mui/icons-material/Share';
 
 const actions = [
-  { icon: <FileCopyIcon />, name: 'Copy' },
-  { icon: <SaveIcon />, name: 'Save' },
-  { icon: <PrintIcon />, name: 'Print' },
+   { icon: <PrintIcon />, name: 'Print' },
   { icon: <ShareIcon />, name: 'Share' },
 ];
 
@@ -23,7 +19,17 @@ export default function BasicSpeedDial() {
   const handleShare = () => {
     const url = window.location.href; // Get the current URL
     navigator.clipboard.writeText(url); // Copy URL to clipboard
-    // You can add a notification or feedback here after copying to the clipboard
+    if (navigator.share) {
+      navigator.share({
+        title: document.title,
+        text: 'Check out this website!',
+        url: window.location.href
+      })
+      .then(() => console.log('Shared successfully'))
+      .catch(error => console.error('Error sharing:', error));
+    } else {
+      alert('Sharing is not supported in this browser.');
+    }
   };
 
   return (

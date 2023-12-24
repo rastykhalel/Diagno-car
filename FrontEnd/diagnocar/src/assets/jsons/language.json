@@ -1,39 +1,44 @@
 {
-    "en": {
-      "home": "Home",
-      "about": "About",
-      "posts": "Posts",
-      "news": "News",
-      "NameOfAplication": "Diagno Car",
-      "Search..." : "Search..."
-    },
-    "es": {
-        "home": "Inicio",
-        "about": "Acerca de",
-        "posts": "Publicaciones",
-        "news": "Noticias",
-        "NameOfAplication": "Diagno Car",
-        "Search..." : ""
-        
-    },
-    "ku": {
-        "home": "سەرەتا",
-        "about": "دەربارەی ئێمە",
-        "posts": "پۆستەکان",
-        "news": "هەواڵەکان",
-        "NameOfAplication": "دایاگنۆ کار",
-        "Search..." : "گەڕان"
-     
-    },
-    "ar": {
-      "home": "الرئیسیە",
-      "about": "عنا",
-      "posts": "نشرنا",
-      "news": "احداث",
-      "NameOfAplication": "دایاکنو کار",
-      "Search..." : "بحث"
-   
+  "en": {
+    "home": "Home",
+    "about": "About",
+    "posts": "Posts",
+    "news": "News",
+    "NameOfAplication": "Diagno Car",
+    "Search...": "Search...",
+    "Messages": "Messages",
+    "Notifications": "Notifications",
+    "Login": "Login",
+    "Signup": "Signup"
+  },
+  "es": {
+    "home": "Inicio",
+    "about": "Acerca de",
+    "posts": "Publicaciones",
+    "news": "Noticias",
+    "NameOfAplication": "Diagno Car",
+    "Search...": "Búsqueda",
+    "Messages": "Mensajes",
+    "Notifications": "Notificaciones"
+  },
+  "ku": {
+    "home": "سەرەتا",
+    "about": "دەربارەی ئێمە",
+    "posts": "پۆستەکان",
+    "news": "هەواڵەکان",
+    "NameOfAplication": "دایاگنۆ کار",
+    "Search...": "گەڕان",
+    "Messages": "پەیامەکان",
+    "Notifications": "ئاگادارکردنەکان"
+  },
+  "ar": {
+    "home": "الرئیسیە",
+    "about": "عنا",
+    "posts": "نشرنا",
+    "news": "احداث",
+    "NameOfAplication": "دایاکنو کار",
+    "Search...": "بحث",
+    "Messages": "رسائل",
+    "Notifications": "تنبيهات"
   }
-   
-  }
-  
+}

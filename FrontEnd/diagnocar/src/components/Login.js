@@ -1,37 +1,51 @@
 import React, { useState } from 'react';
 import { Container, TextField, Button, Typography, Box } from '@mui/material';
 import { useNavigate, Link } from 'react-router-dom';
-
-import '../assets/css/home.css'; // Import your custom CSS file for styling
+import '../assets/css/home.css';
 import Validation from '../assets/js/Loginvalidation';
+
 
 function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
   const [errors, setErrors] = useState({});
-  
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const data = JSON.stringify({
-      username: username,
-      password: password
-    });
-    
     setErrors(Validation({ username, password }));
-    const xhr = new XMLHttpRequest();
-    xhr.withCredentials = true;
+  
+    try {
+      const response = await fetch('http://51.20.138.46/account/api/token/?format=json', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username, password }),
+      });
+  
+      const result = await response.json();
+      
+      
+      // Check if the login was successful
+      if (response.ok) {
+        var AccessToken =result.access
+        var RefreshToken =result.refresh
+        
+        document.cookie = `username=${username}; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/`;
+        document.cookie = `access=${AccessToken}; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/`;
+        document.cookie = `refresh=${RefreshToken}; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/`;
     
-    xhr.addEventListener("readystatechange", function () {
-      if (this.readyState === this.DONE) {
-        console.log(this.responseText);
+        navigate(`/?username=${username}`);
+        window.location.reload();
+      } else {
+         
       }
-    });
-    
-    xhr.open("POST", "http://51.20.138.46/account/api/token/");
-    xhr.setRequestHeader("Content-Type", "application/json");
- 
-    xhr.send(data);
+    } catch (error) {
+      // Handle network errors here
+      console.error('Error:', error);
+    }
+
+  
   };
 
   return (
