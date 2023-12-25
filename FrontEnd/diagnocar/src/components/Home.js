@@ -3,7 +3,6 @@ import '../assets/css/font.css';
 import PrimarySearchAppBar from './smallcomp/appbar';
 import Dashbord from './smallcomp/dashbord';
 import BasicSpeedDial from '../components/smallcomp/BasicSpeedDial';
-import { useLocation } from 'react-router-dom';
 
 // Get the value of the "username" cookie
 function getCookieValue(cookieName) {
