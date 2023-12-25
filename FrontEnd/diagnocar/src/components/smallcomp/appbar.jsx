@@ -12,7 +12,6 @@ import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
-import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import { Button, Select } from '@mui/material';
 import translations from '../../assets/jsons/language.json';
@@ -20,6 +19,7 @@ import { changeTo, getLang, getLangeoptions } from '../../assets/js/langecode';
 import { AccountBox, Newspaper, PostAddSharp, Home, Login, AppRegistration } from '@mui/icons-material';
 import '../../assets/css/home.css';
 import SwipeableTemporaryDrawer from './smallcompindashbord/notfication';
+import DisneyThemedCheckbox from './smallcompindashbord/disnuuithem';
 
 
 var langCode = getLang();
@@ -239,6 +239,10 @@ export default function PrimarySearchAppBar(props) {
               inputProps={{ 'aria-label': 'search' }}
             />
           </Search>
+ 
+
+         <DisneyThemedCheckbox  />
+
 
           <Box sx={{
             display: 'flex',

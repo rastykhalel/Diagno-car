@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Initial button styling */
+
+
+
+.btn-primary {
+    background-color: #1976D2;
+    border-color: #1976D2;
+    /* Other button styling properties */
+  }
+  
+  /* Hover state */
+  .btn-primary:hover {
+    background-color: #0761ba;
+    border-color: #0761ba;
+  }
+  

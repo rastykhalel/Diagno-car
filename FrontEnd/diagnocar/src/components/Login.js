@@ -91,6 +91,7 @@ function Login() {
             helperText={errors.password ? errors.password : ''}
           />
           <Button
+          className='btn btn-primary'
             type="submit"
             fullWidth
             variant="contained"
