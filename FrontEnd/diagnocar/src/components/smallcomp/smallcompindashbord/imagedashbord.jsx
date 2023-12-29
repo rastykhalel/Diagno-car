@@ -16,22 +16,25 @@ function Imagedashbord(para) {
         />
   
         <div
-        className="bg-base-200 "
+         className="bg-base-200 absolute top-20 md:max-w-350px z-10 p-4 md:p-20 rounded-2xl"
+        
           style={{
             position: 'absolute',
             top: '100px',
-            width: '350px',
-            minWidth: '200px',
+            maxWidth: '350px',
             zIndex: '10',
-           
             padding: '20px',
             borderRadius: '20px',
+            margin:'20px',
             [para.loc ? 'right' : 'left']: '10%',
+            
+            
           }}
         >
-          <h1 style={{ textAlign: 'right',  fontSize:'40px'}}>
+          <p style={{ textAlign: 'right'}}  className="text-right text-xl md:text-xl lg:text-xl xl:text-4xl mb-4">
+  
             {para.text}
-          </h1>
+          </p>
           <Link to="/login" className="btn btn-sm btn-primary" style={{ borderRadius: '20px', width: '100%', display: 'flex', alignItems: 'center' }}>
       چوونە ژورەوە
       <NavigateNext style={{ marginLeft: '5px' }} />

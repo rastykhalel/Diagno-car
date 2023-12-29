@@ -9,7 +9,7 @@ export default function BasicTabs() {
   return (
 
     <div role="tablist" className="tabs tabs-lifted">
-      <input type="radio" name="my_tabs_2" role="tab" className="tab" aria-label="نوێترین بڵاوکراوە" />
+      <input type="radio" name="my_tabs_2" role="tab" className="tab max-sm:text-sm" aria-label="نوێترین بڵاوکراوە" />
       <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box p-6">
         <Box
           sx={{
@@ -46,7 +46,7 @@ export default function BasicTabs() {
           />
         </Box></div>
 
-      <input type="radio" name="my_tabs_2" role="tab" className="tab" aria-label="زۆرترین بینراو" checked />
+      <input type="radio" name="my_tabs_2" role="tab" className="tab max-sm:text-sm" aria-label="زۆرترین بینراو" checked />
       <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box p-6"> <Box
         sx={{
           display: 'flex',

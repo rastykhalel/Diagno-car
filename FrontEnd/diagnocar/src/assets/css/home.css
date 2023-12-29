@@ -6,6 +6,14 @@
   align-items: center;
   height: 100vh;
 }
+.css-12i7wg6-MuiPaper-root-MuiDrawer-paper {
+  background-color: var(--fallback-b2,oklch(var(--b2)/var(--tw-bg-opacity))) !important;
+}
+
+.css-18sg6k4-MuiPaper-root-MuiDrawer-paper {
+  background-color: var(--fallback-b2,oklch(var(--b2)/var(--tw-bg-opacity))) !important;
+  
+}
 
 .login-form {
   width: 300px;

@@ -1,14 +1,35 @@
 import { Box, CssBaseline, Typography } from "@mui/material";
 import React from "react";
-import exampleImage from "../../assets/images/image.jpg";
-import exampleImage2 from "../../assets/images/image2.jpg";
-import MultiActionAreaCard from "./smallcompindashbord/postcard";
-import image from "../../assets/images/image.jpg";
-import Posttabs from "./smallcompindashbord/posttabs";
-import Formforfeedback from "./smallcompindashbord/formforfeedback";
-import Footerdashbord from "./smallcompindashbord/footerdashbord";
-import Imagedashbord from "./smallcompindashbord/imagedashbord";
+import exampleImage from "../../../../assets/images/image.jpg";
+import exampleImage2 from "../../../../assets/images/image2.jpg";
+import MultiActionAreaCard from "../../smallcompindashbord/postcard";
+import image from "../../../../assets/images/image.jpg";
+import Posttabs from "../../smallcompindashbord/posttabs";
+import Formforfeedback from "../../smallcompindashbord/formforfeedback";
+import Footerdashbord from "../../smallcompindashbord/footerdashbord";
+import Imagedashbord from "../../smallcompindashbord/imagedashbord";
 
+document.addEventListener("DOMContentLoaded", function() {
+  const stats = document.querySelectorAll(".stat-value");
+
+  stats.forEach(stat => {
+    const target = parseInt(stat.getAttribute("data-target"));
+    let current = 0;
+    const increment = target / 100; // Change the increment for smoother animation
+
+    const updateStat = () => {
+      if (current < target) {
+        current += increment;
+        stat.textContent = Math.floor(current);
+        requestAnimationFrame(updateStat);
+      } else {
+        stat.textContent = target;
+      }
+    };
+
+    updateStat();
+  });
+});
 
 
 
@@ -18,7 +39,7 @@ function dashbord() {
       <CssBaseline />
 
       
-     <Imagedashbord image={exampleImage} text="لە بری تـۆ !ئـێـمــە بەدوای کێشــەی ئۆتـۆمبێلەکەت دەگەڕێین" loc="right" />
+     <Imagedashbord image={exampleImage} text='لە بری تـۆ !ئـێـمــە  بەدوای کێشــەی ئۆتـۆمبێلەکەت دەگەڕێین' loc="right" />
 
   
 
@@ -30,12 +51,12 @@ function dashbord() {
           className="bg-base-200 text-base-content"
           sx={{
             textAlign: "center",
-            marginTop: "10px",
+            marginTop: "20px",
           }}
           variant="h4"
         >
-          {" "}
-          بڵاوکراوە{" "}
+         
+          بڵاوکراوە
         </Typography>
         <Box
           sx={{
@@ -80,7 +101,7 @@ function dashbord() {
 
           <div class="stat">
             <div class="stat-title">Downloads</div>
-            <div class="stat-value">31K</div>
+            <div class="stat-value" id="num1">31k</div>
             <div class="stat-desc">Jan 1st - Feb 1st</div>
           </div>
 

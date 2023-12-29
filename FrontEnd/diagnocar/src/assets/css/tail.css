@@ -16,4 +16,11 @@
     background-color: #0761ba;
     border-color: #0761ba;
   }
-  
+  .border-primary{
+   
+    border-color: #1976D2;
+  }
+
+  .bg-primary{
+    background-color: #1976D2;
+  }

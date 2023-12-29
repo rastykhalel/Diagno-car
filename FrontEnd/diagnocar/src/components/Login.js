@@ -6,15 +6,19 @@ import Validation from '../assets/js/Loginvalidation';
 
 
 function Login() {
+  const [Loding,setLoding]=useState(false)
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
   const [errors, setErrors] = useState({});
+
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     setErrors(Validation({ username, password }));
   
     try {
+       setLoding(true);
       const response = await fetch('http://51.20.138.46/account/api/token/?format=json', {
         method: 'POST',
         headers: {
@@ -40,9 +44,12 @@ function Login() {
       } else {
          
       }
+
+      setLoding(false);
     } catch (error) {
       // Handle network errors here
       console.error('Error:', error);
+      setLoding(false);
     }
 
   
@@ -90,7 +97,10 @@ function Login() {
             error={!!errors.password}
             helperText={errors.password ? errors.password : ''}
           />
-          <Button
+{Loding ? ( <Button loading variant="contained" className='btn btn-primary'   sx={{ mt: 3, mb: 2 }}  fullWidth>
+<span className="loading loading-dots loading-lg"></span>
+      </Button>
+          ) : ( <Button
           className='btn btn-primary'
             type="submit"
             fullWidth
@@ -98,7 +108,16 @@ function Login() {
             sx={{ mt: 3, mb: 2 }}
           >
             Log In
-          </Button>
+          </Button>)
+
+
+
+}
+
+         
+
+
+
           <Link to="/Signup" style={{ textDecoration: 'none' }}>
             <Typography variant="body2" color="primary" style={{ marginTop: '20px', cursor: 'pointer' }}>
               Create an account?

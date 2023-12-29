@@ -9,6 +9,7 @@
     "Messages": "Messages",
     "Notifications": "Notifications",
     "Login": "Login",
+    "Services": "Services",
     "Signup": "Signup"
   },
   "es": {
@@ -29,6 +30,7 @@
     "NameOfAplication": "دایاگنۆ کار",
     "Search...": "گەڕان",
     "Messages": "پەیامەکان",
+    "Services": "خزمەتگوزاریەکان",
     "Notifications": "ئاگادارکردنەکان"
   },
   "ar": {
